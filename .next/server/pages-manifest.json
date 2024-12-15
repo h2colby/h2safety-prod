@@ -1,0 +1,9 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/projects/[projectId]": "pages/projects/[projectId].js",
+  "/threads/[threadId]": "pages/threads/[threadId].js",
+  "/dashboard": "pages/dashboard.js",
+  "/api/insights/generate": "pages/api/insights/generate.js"
+}
