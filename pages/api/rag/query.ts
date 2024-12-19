@@ -23,9 +23,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   }
 
+  // Update the RAG service URL to match our test environment
+  const RAG_SERVICE_URL = process.env.NEXT_PUBLIC_RAG_SERVICE_URL || 'http://34.28.61.219:5002/ask'
+
   try {
-    // Update this URL to your new RAG service endpoint
-    const response = await fetch('http://192.168.2.232:5002/ask', {
+    const response = await fetch(RAG_SERVICE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question })
@@ -36,9 +38,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(500).json({ error: `Failed to query RAG pipeline: ${text}` })
     }
 
-    const data = await response.json() // { answer: string }
+    const data = await response.json()
 
-    // Store the user’s query
+    // Update to match the RAG service response format
+    const answer = data.final_response || data.answer
+
+    // Store the user's query
     await addDoc(collection(db, 'messages'), {
       content: question,
       conversationId: threadId,
@@ -48,16 +53,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       userId: userId || null,
     })
 
-    // Store the AI’s answer
+    // Store the AI's answer
     await addDoc(collection(db, 'messages'), {
-      content: data.answer,
+      content: answer,
       conversationId: threadId,
       role: 'assistant',
       sender: 'ai',
       timestamp: serverTimestamp()
     })
 
-    return res.status(200).json({ answer: data.answer })
+    return res.status(200).json({ answer })
   } catch (error: any) {
     return res.status(500).json({ error: error.message })
   }

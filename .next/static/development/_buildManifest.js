@@ -1,1 +1,3 @@
-self.__BUILD_MANIFEST = (function(a){return {__rewrites:{afterFiles:[],beforeFiles:[],fallback:[]},__routerFilterStatic:a,__routerFilterDynamic:a,"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/dashboard":["static\u002Fchunks\u002Fpages\u002Fdashboard.js"],"/projects/[projectId]":["static\u002Fchunks\u002Fpages\u002Fprojects\u002F[projectId].js"],"/threads/[threadId]":["static\u002Fchunks\u002Fpages\u002Fthreads\u002F[threadId].js"],sortedPages:["\u002F_app","\u002F_error","\u002Fdashboard","\u002Fprojects\u002F[projectId]","\u002Fthreads\u002F[threadId]"]}}(void 0));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+version https://git-lfs.github.com/spec/v1
+oid sha256:e4346693c51899d7310516688260c35210c38164bad6e0c9f88e13ec737658b4
+size 798

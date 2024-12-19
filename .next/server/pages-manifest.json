@@ -1,9 +1,3 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/projects/[projectId]": "pages/projects/[projectId].js",
-  "/threads/[threadId]": "pages/threads/[threadId].js",
-  "/dashboard": "pages/dashboard.js",
-  "/api/insights/generate": "pages/api/insights/generate.js"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f1f43b6b47bb6dad2818984d0bf3ca528b8bd8a2a0467f5638264f4647593a7a
+size 371

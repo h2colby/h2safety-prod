@@ -29,7 +29,7 @@ type ProjectData = {
   };
 }
 
-const RAG_SERVICE_URL = process.env.NEXT_PUBLIC_RAG_SERVICE_URL || 'http://192.168.2.232:5002/ask';
+const RAG_SERVICE_URL = process.env.NEXT_PUBLIC_RAG_SERVICE_URL || 'http://34.28.61.219:5002/ask';
 const FETCH_TIMEOUT = 60000; // 60 seconds timeout
 
 const fetchWithTimeout = async (resource: string, options: RequestInit & { timeout?: number } = {}) => {
